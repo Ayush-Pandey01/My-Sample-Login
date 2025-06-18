@@ -59,24 +59,26 @@
 <body>
 
   <div class="login-container">
-    <h2>Login</h2>
-    <input type="text" id="username" placeholder="Username">
-    <input type="password" id="pass" placeholder="Password">
+    <h2>Login Ayush</h2>
+    <input type="text" class="username" id="username" placeholder="Username">
+    <input type="password" class="password" id="pass" placeholder="Password">
     <button  id ="submit" onclick="login()">Login</button>
     <p id="error" class="error"></p>
   </div>
 
   <script>
     function login() {
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+      const username = document.getElementsByClassName('username').value;
+      const password = document.getElementsByClassName('password').value;
       const error = document.getElementById('error');
 
-      if (username === "" || password === "") {
+      if (username === null || password === null) {
         error.textContent = "Please enter both username and password.";
+        alert("Please enter both username and password.");
+
       } else {
         error.textContent = "";
-        alert("Login successful");
+        alert("Login successful ");
         // Add your login logic here (e.g., send data to server)
       }
     }
